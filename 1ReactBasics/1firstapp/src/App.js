@@ -17,16 +17,25 @@ function App() {
         >
           Learn React
         </a>
+
+        <Header/>
+        <Heading/>
       </header>
     </div>
   );
 }
 
-function Heading() {
+function Header() {
   let tittle = "This is some heading text";
   return (
       <h1>{tittle}</h1>
   );
+}
+
+function Heading() {
+  return (
+      <h1>This is an h1 heading.</h1>
+  )
 }
 
 export default App;
