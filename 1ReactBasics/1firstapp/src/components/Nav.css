@@ -1,0 +1,9 @@
+.main-nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.main-nav li {
+    display: inline-block;
+    margin-right: 20px; /* Adds some space between items */
+}
