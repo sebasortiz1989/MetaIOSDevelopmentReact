@@ -6,56 +6,73 @@ import Intro1 from "./components/Intro1";
 import Intro2 from "./components/Intro2";
 import Intro3 from "./components/Intro3";
 import Footer from "./components/Footer";
+import React, { useState } from 'react';
+import Header from "./components/Header";
+import Main from "./components/Main";
+import Sidebar from "./components/Sidebar";
 
 function App() {
-  return (
+    const [showComponents, setShowComponents] = useState(false);
+
+    const toggleComponents = () => {
+        setShowComponents(!showComponents);
+    };
+
+    return (
       <div className="App">
           <img src={logo} className="App-logo" alt="logo"/>
           <header className="App-header">
-              <p>
-                  Edit <code>src/App.js</code> and save to reload.
-              </p>
-              <a
-                  className="App-link"
-                  href="https://reactjs.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-              >
-                  Learn React
-              </a>
+              {!showComponents && (
+                  <div>
+                      <p>
+                          Edit <code>src/App.js</code> and save to reload.
+                      </p>
+                      <a
+                          className="App-link"
+                          href="https://reactjs.org"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                      >
+                          Learn React
+                      </a>
 
-              <UsingAllComponents/>
+                      <ExampleProps/>
+                  </div>
+              )}
+
+              <button onClick={toggleComponents}>
+                  {showComponents ? 'Hide Components' : 'Show Components'}
+              </button>
+
+              {showComponents && <UsingAllComponents/>}
           </header>
       </div>
-  );
+    );
 }
 
 function UsingAllComponents() {
     return (
         <div>
-        <ul>
-            <Nav/>
-            <Promo/>
-            <Intro1/>
-            <Intro2/>
-            <Intro3/>
-            <Footer/>
-        </ul>
-    </div>
+            <ul>
+                <Nav/>
+                <Promo/>
+                <Intro1 propsValue="Hello World"/>
+                <Intro2/>
+                <Intro3/>
+                <Footer/>
+            </ul>
+        </div>
   );
 }
 
-function Header() {
-  let tittle = "This is some heading text";
-  return (
-      <h1>{tittle}</h1>
-  );
-}
-
-function Heading() {
-  return (
-      <h1>This is an h1 heading.</h1>
-  )
+function ExampleProps() {
+    return (
+        <div>
+            <Header name="Anna" color="purple"/>
+            <Main greet="Howdy"/>
+            <Sidebar greet="Howdy"/>
+        </div>
+    )
 }
 
 export default App;
