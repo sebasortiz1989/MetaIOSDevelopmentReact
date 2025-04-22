@@ -10,6 +10,7 @@ import React, { useState } from 'react';
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Sidebar from "./components/Sidebar";
+import Logo from "./components/Logo";
 
 function App() {
     const [showComponents, setShowComponents] = useState(false);
@@ -45,6 +46,8 @@ function App() {
               </button>
 
               {showComponents && <UsingAllComponents/>}
+
+              <Logo/>
           </header>
       </div>
     );
