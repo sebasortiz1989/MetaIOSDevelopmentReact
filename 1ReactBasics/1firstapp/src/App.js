@@ -11,7 +11,10 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import Sidebar from "./components/Sidebar";
 import Logo from "./components/Logo";
+import Card from "./components/Card";
+import CardNumber from "./components/CardNumber";
 
+/*
 function App() {
     const [showComponents, setShowComponents] = useState(false);
 
@@ -77,5 +80,20 @@ function ExampleProps() {
         </div>
     )
 }
+*/
 
+const randNum = () => Math.floor(Math.random() * 100) + 1;
+function App() {
+    return (
+        <div>
+            <h1>Task: Add three Card elements</h1>
+            <Card h2="First card's h2" h3="First card's h3"/>
+            <Card h2="Second card's h2" h3="Second card's h3"/>
+            <Card h2="Third card's h2" h3="Third card's h3"/>
+            <CardNumber num={randNum()} />
+            <CardNumber num={randNum()} />
+            <CardNumber num={randNum()} />
+        </div>
+    );
+}
 export default App;
