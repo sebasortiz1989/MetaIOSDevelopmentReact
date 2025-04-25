@@ -13,6 +13,7 @@ import Sidebar from "./components/Sidebar";
 import Logo from "./components/Logo";
 import Card from "./components/Card";
 import CardNumber from "./components/CardNumber";
+import Btn from "./components/Btn";
 
 /*
 function App() {
@@ -85,15 +86,19 @@ function ExampleProps() {
 const randNum = () => Math.floor(Math.random() * 100) + 1;
 function App() {
     return (
-        <div>
+        <div className="app-container">
             <h1>Task: Add three Card elements</h1>
-            <Card h2="First card's h2" h3="First card's h3"/>
-            <Card h2="Second card's h2" h3="Second card's h3"/>
-            <Card h2="Third card's h2" h3="Third card's h3"/>
-            <CardNumber num={randNum()} />
-            <CardNumber num={randNum()} />
-            <CardNumber num={randNum()} />
+            <div className="wrap-panel">
+                <Card h2="First card's h2" h3="First card's h3"/>
+                <Card h2="Second card's h2" h3="Second card's h3"/>
+                <Card h2="Third card's h2" h3="Third card's h3"/>
+                <CardNumber num={randNum()}/>
+                <CardNumber num={randNum()}/>
+                <CardNumber num={randNum()}/>
+                <Btn/>
+            </div>
         </div>
     );
 }
+
 export default App;

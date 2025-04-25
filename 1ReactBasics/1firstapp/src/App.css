@@ -90,3 +90,24 @@ div {
   font-size: 1em;
   color: #333;
 }
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrap-panel {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Adjust the width of your components as needed */
+.wrap-panel > * {
+  flex-basis: calc(33.333% - 1rem);
+  min-width: 200px;
+}
