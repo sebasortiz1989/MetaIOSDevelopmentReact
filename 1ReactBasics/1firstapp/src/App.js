@@ -14,6 +14,7 @@ import Logo from "./components/Logo";
 import Card from "./components/Card";
 import CardNumber from "./components/CardNumber";
 import Btn from "./components/Btn";
+import ModeToggler from "./components/ModeToggler";
 
 /*
 function App() {
@@ -96,6 +97,7 @@ function App() {
                 <CardNumber num={randNum()}/>
                 <CardNumber num={randNum()}/>
                 <Btn/>
+                <ModeToggler/>
             </div>
         </div>
     );
