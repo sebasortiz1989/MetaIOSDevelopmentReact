@@ -9,6 +9,9 @@ import ModeToggler from "./components/StateComponents/ModeToggler";
 import Promo2 from "./components/Promo2";
 import RegisterForm from "./components/StateComponents/RegisterForm";
 import TextInputWithFocusButton from "./components/StateComponents/TextInputWithFocusButton";
+import MealsList from "./ContextProvider/MealsList";
+import MealsProvider from "./ContextProvider/MealsProvider";
+import UseReduceExample from "./components/UseReducerHook/UseReduceExample";
 
 /*
 function App() {
@@ -96,6 +99,11 @@ function App() {
                 <Promo2/>
                 <RegisterForm/>
                 <TextInputWithFocusButton/>
+                <MealsProvider>
+                    <MealsList/>
+                </MealsProvider>
+
+                <UseReduceExample/>
             </div>
         </div>
     );
