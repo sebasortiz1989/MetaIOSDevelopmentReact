@@ -1,20 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
-import Nav from "./components/Nav";
 import Promo from "./components/Promo";
-import Intro1 from "./components/Intro1";
-import Intro2 from "./components/Intro2";
-import Intro3 from "./components/Intro3";
-import Footer from "./components/Footer";
 import React, { useState } from 'react';
-import Header from "./components/Header";
-import Main from "./components/Main";
-import Sidebar from "./components/Sidebar";
-import Logo from "./components/Logo";
 import Card from "./components/Card";
 import CardNumber from "./components/CardNumber";
 import Btn from "./components/Btn";
 import ModeToggler from "./components/ModeToggler";
+import Promo2 from "./components/Promo2";
+import RegisterForm from "./components/RegisterForm";
+import TextInputWithFocusButton from "./components/TextInputWithFocusButton";
 
 /*
 function App() {
@@ -98,6 +92,10 @@ function App() {
                 <CardNumber num={randNum()}/>
                 <Btn/>
                 <ModeToggler/>
+                <Promo/>
+                <Promo2/>
+                <RegisterForm/>
+                <TextInputWithFocusButton/>
             </div>
         </div>
     );
