@@ -12,6 +12,7 @@ import TextInputWithFocusButton from "./components/StateComponents/TextInputWith
 import MealsList from "./ContextProvider/MealsList";
 import MealsProvider from "./ContextProvider/MealsProvider";
 import UseReduceExample from "./components/UseReducerHook/UseReduceExample";
+import FruitsExercise from "./components/FruitsExercise/FruitsExercise";
 
 /*
 function App() {
@@ -104,6 +105,7 @@ function App() {
                 </MealsProvider>
 
                 <UseReduceExample/>
+                <FruitsExercise/>
             </div>
         </div>
     );
