@@ -4,11 +4,11 @@ import Promo from "./components/Promo";
 import React, { useState } from 'react';
 import Card from "./components/Card";
 import CardNumber from "./components/CardNumber";
-import Btn from "./components/Btn";
-import ModeToggler from "./components/ModeToggler";
+import Btn from "./components/StateComponents/Btn";
+import ModeToggler from "./components/StateComponents/ModeToggler";
 import Promo2 from "./components/Promo2";
-import RegisterForm from "./components/RegisterForm";
-import TextInputWithFocusButton from "./components/TextInputWithFocusButton";
+import RegisterForm from "./components/StateComponents/RegisterForm";
+import TextInputWithFocusButton from "./components/StateComponents/TextInputWithFocusButton";
 
 /*
 function App() {
