@@ -46,10 +46,6 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
 h1 {
@@ -95,21 +91,17 @@ div {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding-top: 20px; /* Add some top padding */
 }
 
 .wrap-panel {
   flex: 1;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center; /* Center items horizontally */
   align-content: flex-start;
   gap: 1rem;
   padding: 1rem;
-}
-
-/* Adjust the width of your components as needed */
-.wrap-panel > * {
-  flex-basis: calc(33.333% - 1rem);
-  min-width: 200px;
 }
 
 .vertical-container {
@@ -117,4 +109,33 @@ div {
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  background-color: #2c3e50;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #ecf0f1;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+  background-color: #34495e;
+  color: #3498db;
+}
+
+.nav-item.active {
+  background-color: #3498db;
+  color: #ffffff;
 }

@@ -13,6 +13,9 @@ import MealsList from "./ContextProvider/MealsList";
 import MealsProvider from "./ContextProvider/MealsProvider";
 import UseReduceExample from "./components/UseReducerHook/UseReduceExample";
 import FruitsExercise from "./components/FruitsExercise/FruitsExercise";
+import HomePage from "./components/Navigation/HomePage";
+import {Routes, Route, Link} from "react-router-dom";
+import AboutMe from "./components/Navigation/AboutMe";
 
 /*
 function App() {
@@ -85,27 +88,40 @@ function ExampleProps() {
 const randNum = () => Math.floor(Math.random() * 100) + 1;
 function App() {
     return (
-        <div className="app-container">
-            <h1>Task: Add three Card elements</h1>
-            <div className="wrap-panel">
-                <Card h2="First card's h2" h3="First card's h3"/>
-                <Card h2="Second card's h2" h3="Second card's h3"/>
-                <Card h2="Third card's h2" h3="Third card's h3"/>
-                <CardNumber num={randNum()}/>
-                <CardNumber num={randNum()}/>
-                <CardNumber num={randNum()}/>
-                <Btn/>
-                <ModeToggler/>
-                <Promo/>
-                <Promo2/>
-                <RegisterForm/>
-                <TextInputWithFocusButton/>
-                <MealsProvider>
-                    <MealsList/>
-                </MealsProvider>
+        <div>
+            <nav className="nav">
+                <Link to="/" className="nav-item">Homepage</Link>
+                <Link to="/about-me" className="nav-item">About me</Link>
+            </nav>
 
-                <UseReduceExample/>
-                <FruitsExercise/>
+            <Routes>
+                <Route path="/" element={<HomePage/>}/>
+                <Route path="/about-me" element={<AboutMe/>}/>
+            </Routes>
+
+            <div className="app-container">
+                <h1>Task: Add three Card elements</h1>
+                <div className="wrap-panel">
+                    <Card h2="First card's h2" h3="First card's h3"/>
+                    <Card h2="Second card's h2" h3="Second card's h3"/>
+                    <Card h2="Third card's h2" h3="Third card's h3"/>
+                    <CardNumber num={randNum()}/>
+                    <CardNumber num={randNum()}/>
+                    <CardNumber num={randNum()}/>
+                    <Btn/>
+                    <ModeToggler/>
+                    <Promo/>
+                    <Promo2/>
+                    <RegisterForm/>
+                    <TextInputWithFocusButton/>
+                    <MealsProvider>
+                        <MealsList/>
+                    </MealsProvider>
+
+                    <UseReduceExample/>
+                    <FruitsExercise/>
+
+                </div>
             </div>
         </div>
     );
