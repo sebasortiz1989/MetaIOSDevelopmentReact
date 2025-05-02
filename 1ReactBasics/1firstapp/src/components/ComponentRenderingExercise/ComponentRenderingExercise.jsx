@@ -2,6 +2,8 @@ import {useState} from "react";
 import HomePage from "./HomePage";
 import LogoutButton from "./LogoutButton";
 import LoginButton from "./LoginButton";
+import VideoExample from "../DisplayMedia/VideoExample";
+import AudioExample from "../DisplayMedia/AudioExample";
 
 function ComponentRenderingExercise() {
     const [loggedIn, setLoggedIn] = useState(false);
@@ -14,10 +16,14 @@ function ComponentRenderingExercise() {
             {loggedIn ? (
                 <div>
                     <HomePage />
+                    <VideoExample/>
                     <LogoutButton logout={logout} />
                 </div>
             ) : (
-                <LoginButton login={login} />
+                <div>
+                    <AudioExample/>
+                    <LoginButton login={login} />
+                </div>
             )}
         </>
     );

@@ -17,7 +17,7 @@ import HomePage from "./components/Navigation/HomePage";
 import {Routes, Route, Link} from "react-router-dom";
 import AboutMe from "./components/Navigation/AboutMe";
 import ComponentRenderingExercise from "./components/ComponentRenderingExercise/ComponentRenderingExercise";
-import DisplayImages from "./components/DisplayImages/DisplayImages";
+import DisplayImages from "./components/DisplayMedia/DisplayImages";
 
 /*
 function App() {
