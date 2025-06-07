@@ -1,12 +1,9 @@
 
 import React from 'react';
-import {
-  View,
-} from 'react-native';
+import {View} from 'react-native';
 
 import LittleLemonHeader from './Components/LittleLemonHeader';
-import LittleLemonFooter from './Components/LittleLemonFooter';
-import WelcomeScreen from './Components/WelcomeScreen';
+import MenuItems from "./Components/MenuItems";
 
 function App(): React.JSX.Element {
     return (
@@ -17,12 +14,14 @@ function App(): React.JSX.Element {
                     backgroundColor: '#495E57',
                 }}>
                 <LittleLemonHeader />
-                <WelcomeScreen />
+                <MenuItems/>
+                {/*<WelcomeScreen />*/}
             </View>
-            <View style={{ backgroundColor: '#495E57' }}>
-                <LittleLemonFooter />
-            </View>
+            {/*<View style={{ backgroundColor: '#495E57' }}>*/}
+            {/*    <LittleLemonFooter />*/}
+            {/*</View>*/}
         </>
     );
 }
+
 export default App;
