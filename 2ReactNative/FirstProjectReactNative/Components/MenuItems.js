@@ -1,27 +1,46 @@
-import {ScrollView, View, Text} from 'react-native';
-
-const green = "#495E57";
-const yellow = '#F4CE14';
+import {ScrollView, View, Text, StyleSheet} from 'react-native';
 
 const menuItemsToDisplay = [
-    'Item1\nItem2\nItem3\nItem4\nItem5\nItem6\nItem7\nItem8\nItem9' +
-    '\nItem10\nItem1\nItem2\nItem3\nItem4\nItem5\nItem6\nItem7\nItem8' +
-    '\nItem9\nItem10\nItem1\nItem2\nItem3\nItem4\nItem5\nItem6\nItem7' +
-    '\nItem8\nItem9\nItem10\nItem1\nItem2\nItem3\nItem4\nItem5\nItem6' +
-    '\nItem7\nItem8\nItem9\nItem10\n',
+    'Hummus\nMoutabal\nFalafel\nMarinated Olives\nKofta\nEggplant Salad\n' +
+    'Lentil Burger\nSmoked Salmon\nKofta Burger\nTurkish Kebab\nFries\n' +
+    'Buttered Rice\nBread Sticks\nPita Pocket\nLentil Soup\nGreek Salad\n' +
+    'Rice Pilaf\nBaklava\nTartufo\nTiramisu\nPanna Cotta',
 ];
 
 const MenuItems = () => {
     return (
-      <View style={{ flex: 0.75 }}>
-          <ScrollView indicatorStyle={'white'} style={{padding: 40, backgroundColor: green}}>
-              <Text style={{fontSize: 40, flexWrap: 'wrap', color: 'white'}}>
-                  View Menu
-              </Text>
-              <Text style={{color: yellow, fontSize: 30}}>{menuItemsToDisplay[0]}</Text>
-          </ScrollView>
-      </View>
+        <View style={menuStyles.container}>
+            <ScrollView
+                style={menuStyles.innerContainer}>
+                <Text style={menuStyles.headerText}>
+                    View Menu
+                </Text>
+                <Text style={menuStyles.itemText}>
+                    {menuItemsToDisplay[0]}
+                </Text>
+            </ScrollView>
+        </View>
     );
 };
 
 export default MenuItems;
+
+const menuStyles = StyleSheet.create({
+    container: {
+        flex: 0.75,
+    },
+    innerContainer: {
+        paddingHorizontal: 40,
+        paddingVertical: 40,
+        backgroundColor: 'black',
+    },
+    headerText: {
+        color: 'white',
+        fontSize: 40,
+        flexWrap: 'wrap',
+    },
+    itemText: {
+        color: '#F4CE14',
+        fontSize: 36,
+    },
+});
