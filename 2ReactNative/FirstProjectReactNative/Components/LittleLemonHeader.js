@@ -4,13 +4,8 @@ import React from 'react';
 export default function LittleLemonHeader() {
     return (
         <View style={headerStyles.container}>
-            <Text
-                style={headerStyles.headerText}
-                numberOfLines={3}>
-                Welcome
-                <Text style={headerStyles.innerText}>
-                    Little Lemon
-                </Text>
+            <Text style={headerStyles.headerText}>
+                Little Lemon
             </Text>
         </View>
     );
