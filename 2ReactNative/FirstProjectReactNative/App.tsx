@@ -1,29 +1,39 @@
 import * as React from 'react';
-import {View, StyleSheet, ScrollView} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 
 import LittleLemonHeader from './Components/LittleLemonHeader';
-import LittleLemonFooter from './Components/LittleLemonFooter';
-import MenuItems from './Components/MenuItems';
 import FeedbackForm from './Components/FeedBackForm';
 
 export default function App() {
     return (
         <>
             <View style={styles.container}>
-                <LittleLemonHeader />
-                <ScrollView>
-                    <View style={styles.section}>
-                        <MenuItems />
-                    </View>
-                    <View style={styles.section}>
-                        <FeedbackForm />
-                    </View>
-                </ScrollView>
-                {/*<FeedbackForm />*/}
+                <LittleLemonHeader/>
+                <FeedbackForm />
             </View>
-            <View style={styles.footerContainer}>
-                <LittleLemonFooter />
-            </View>
+            {/*<View style={styles.container}>*/}
+            {/*    <LittleLemonHeader />*/}
+            {/*    <LoginScreen />*/}
+            {/*</View>*/}
+            {/*<View style={styles.footerContainer}>*/}
+            {/*    <LittleLemonFooter />*/}
+            {/*</View>*/}
+
+            {/*<View style={styles.container}>*/}
+            {/*    <LittleLemonHeader />*/}
+            {/*    <ScrollView>*/}
+            {/*        <View style={styles.section}>*/}
+            {/*            <MenuItems />*/}
+            {/*        </View>*/}
+            {/*        <View style={styles.section}>*/}
+            {/*            <FeedbackForm />*/}
+            {/*        </View>*/}
+            {/*    </ScrollView>*/}
+            {/*    /!*<FeedbackForm />*!/*/}
+            {/*</View>*/}
+            {/*<View style={styles.footerContainer}>*/}
+            {/*    <LittleLemonFooter />*/}
+            {/*</View>*/}
         </>
     );
 }
