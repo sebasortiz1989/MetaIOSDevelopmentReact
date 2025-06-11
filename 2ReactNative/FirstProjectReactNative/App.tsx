@@ -1,16 +1,25 @@
 import * as React from 'react';
-import { View, StyleSheet } from 'react-native';
+import {View, StyleSheet, ScrollView} from 'react-native';
 
 import LittleLemonHeader from './Components/LittleLemonHeader';
 import LittleLemonFooter from './Components/LittleLemonFooter';
 import MenuItems from './Components/MenuItems';
+import FeedbackForm from './Components/FeedBackForm';
 
 export default function App() {
     return (
         <>
             <View style={styles.container}>
                 <LittleLemonHeader />
-                <MenuItems />
+                <ScrollView>
+                    <View style={styles.section}>
+                        <MenuItems />
+                    </View>
+                    <View style={styles.section}>
+                        <FeedbackForm />
+                    </View>
+                </ScrollView>
+                {/*<FeedbackForm />*/}
             </View>
             <View style={styles.footerContainer}>
                 <LittleLemonFooter />
@@ -24,5 +33,11 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#333333',
     },
-    footerContainer: { backgroundColor: '#333333' },
+    section: {
+        flex: 1,
+        marginBottom: 20,
+    },
+    footerContainer: {
+        backgroundColor: '#333333'
+    },
 });
