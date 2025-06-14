@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { View, Text, StyleSheet, SectionList } from 'react-native';
+import { View, Text, StyleSheet, SectionList, Pressable, ScrollView } from 'react-native';
 
 const menuItemsToDisplay = [
     {
@@ -48,7 +48,7 @@ const menuItemsToDisplay = [
 
 const Separator = () => <View style={menuStyles.separator}/>;
 
-const Header = () => <Text style={menuStyles.headerText}>View Menu</Text>;
+// const Header = () => <Text style={menuStyles.headerText}>View Menu</Text>;
 
 const Footer = () => (
     <Text style={menuStyles.footerText}>
@@ -64,6 +64,7 @@ const Item = ({ name, price }) => (
 );
 
 const MenuItems = () => {
+    const [showMenu, setShowMenu] = React.useState(false);
     const renderItem = ({ item }) => <Item name={item.name} price={item.price} />;
 
     const renderSectionHeader = ({ section: { title } }) => (
@@ -74,15 +75,39 @@ const MenuItems = () => {
 
     return (
         <View style={menuStyles.container}>
-            <SectionList
-                sections={menuItemsToDisplay}
-                keyExtractor={(item, index) => item + index}
-                renderItem={renderItem}
-                renderSectionHeader={renderSectionHeader}
-                ListHeaderComponent={Header}
-                ListFooterComponent={Footer}
-                ItemSeparatorComponent={Separator}
-            />
+            <ScrollView contentContainerStyle={menuStyles.scrollViewContent}>
+                {!showMenu && (
+                    <Text style={menuStyles.infoSection}>
+                        Little Lemon is a charming neighborhood bistro that serves simple food
+                        and classic cocktails in a lively but casual environment. We would love
+                        to hear your experience with us!
+                    </Text>
+                )}
+
+                <Pressable
+                    style={({pressed}) => [
+                        menuStyles.button,
+                        pressed && menuStyles.buttonPressed,
+                    ]}
+                    onPress={() => setShowMenu(!showMenu)}
+                >
+                    <Text style={menuStyles.buttonText}>
+                        {showMenu ? 'Home' : 'View Menu'}
+                    </Text>
+                </Pressable>
+
+                {showMenu && (
+                    <SectionList
+                        sections={menuItemsToDisplay}
+                        keyExtractor={(item, index) => item + index}
+                        renderItem={renderItem}
+                        renderSectionHeader={renderSectionHeader}
+                        ListFooterComponent={Footer}
+                        ItemSeparatorComponent={Separator}
+                        scrollEnabled={false}  // Disable scrolling for this list
+                    />
+                )}
+            </ScrollView>
         </View>
     );
 };
@@ -127,6 +152,35 @@ const menuStyles = StyleSheet.create({
         paddingVertical: 8,
         fontSize: 30,
         color: '#EDEFEE',
+    },
+    button: {
+        backgroundColor: '#F4CE14',
+        padding: 10,
+        width: '70%',
+        marginVertical: 8,
+        borderRadius: 30,
+        alignItems: 'center',
+        alignSelf: 'center',
+        justifyContent: 'center',
+        elevation: 5,
+    },
+    buttonPressed: {
+        backgroundColor: '#E1BD13',
+        elevation: 3,
+    },
+    buttonText: {
+        flexWrap: 'wrap',
+        textAlign: 'center',
+        fontSize: 30,
+        color: 'black',
+    },
+    infoSection: {
+        fontSize: 24,
+        padding: 20,
+        marginVertical: 8,
+        color: '#EDEFEE',
+        textAlign: 'center',
+        backgroundColor: '#495E57',
     },
 });
 

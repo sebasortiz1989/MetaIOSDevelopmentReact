@@ -1,16 +1,18 @@
 import * as React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, ScrollView} from 'react-native';
 
 import LittleLemonHeader from './Components/LittleLemonHeader';
-import FeedbackForm from './Components/FeedBackForm';
+import MenuItems from './Components/MenuItems';
+import LittleLemonFooter from './Components/LittleLemonFooter';
 
 export default function App() {
     return (
         <>
-            <View style={styles.container}>
-                <LittleLemonHeader/>
-                <FeedbackForm />
-            </View>
+            {/*<View style={styles.container}>*/}
+            {/*    <LittleLemonHeader/>*/}
+            {/*    <FeedbackForm />*/}
+            {/*</View>*/}
+
             {/*<View style={styles.container}>*/}
             {/*    <LittleLemonHeader />*/}
             {/*    <LoginScreen />*/}
@@ -19,21 +21,19 @@ export default function App() {
             {/*    <LittleLemonFooter />*/}
             {/*</View>*/}
 
-            {/*<View style={styles.container}>*/}
-            {/*    <LittleLemonHeader />*/}
-            {/*    <ScrollView>*/}
-            {/*        <View style={styles.section}>*/}
-            {/*            <MenuItems />*/}
-            {/*        </View>*/}
-            {/*        <View style={styles.section}>*/}
-            {/*            <FeedbackForm />*/}
-            {/*        </View>*/}
-            {/*    </ScrollView>*/}
-            {/*    /!*<FeedbackForm />*!/*/}
-            {/*</View>*/}
-            {/*<View style={styles.footerContainer}>*/}
-            {/*    <LittleLemonFooter />*/}
-            {/*</View>*/}
+            <View style={styles.container}>
+                <View style={styles.headerContainer}>
+                    <LittleLemonHeader />
+                </View>
+                <ScrollView style={styles.scrollViewContainer}>
+                    <View style={styles.section}>
+                        <MenuItems />
+                    </View>
+                </ScrollView>
+                <View style={styles.footerContainer}>
+                    <LittleLemonFooter />
+                </View>
+            </View>
         </>
     );
 }
@@ -43,11 +43,16 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#333333',
     },
-    section: {
-        flex: 1,
-        marginBottom: 20,
+    headerContainer: {
+        flex: 0.15,
+    },
+    scrollViewContainer: {
+        flex: 0.8,
     },
     footerContainer: {
-        backgroundColor: '#333333'
+        flex: 0.05,
+    },
+    section: {
+        flexGrow: 1,
     },
 });
